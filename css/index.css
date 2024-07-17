@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+.main{
+    position: relative;
+    background-image: url("./../src/background.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: center;
+}
+.top{
+    /* height:8vh; */
+    width:100%;
+    background-color: rgba(94, 181, 98, 1);
+    overflow: hidden;
+}
+.top img{
+    padding:1px 50px;
+}
+.top .left{
+    float: left;
+}
+.top .right{
+    float:right;
+    
+}
+.right button{
+    margin: 40px;
+    padding:10px 50px;
+    border:1px solid white;
+    color: white;
+    background: transparent;
+    cursor: pointer;
+}
+
+.body{
+    width:35%;
+    margin:150px auto;
+    background-color:rgba(94, 181, 98, 0.401);
+    height:50%;
+
+}
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.body h1{
+    font-size:35px;
+    font-family: sans-serif;
+    text-align: center;
+    padding-top:50px;
+    color:  rgb(31, 126, 36);
+    font-weight: bolder;
+    padding-bottom:20px;
+}
+form{
+    text-align: center;
+}
+
+input{
+    text-align: center;
+    padding:5px 50px;
+    margin:10px;
+    border: none;
+    border-radius:5px;
+}
+button{
+    text-align: center;
+    padding:5px 50px;
+    margin:10px;
+    background-color:  rgba(94, 181, 98, 1);
+    border: none;
+    border-radius:5px;
+    color: white;
+    margin-bottom:50px;
+    cursor: pointer;
+}
+
+footer{
+    height:50px;
+    background-color: rgba(94, 181, 98, 1);
+    position: relative;
+    bottom: -25px;
+}
+footer p{
+    text-align: center;
+    padding-top:15px;
+    color: white;
+}
