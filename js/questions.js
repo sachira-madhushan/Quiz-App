@@ -7,6 +7,29 @@ var selectedAnswerList=[];
 var selectedAnswer=5;
 var oldSelectedAnswer;
 var correctAnswer=3;
+var timer=30;
+
+function countTimer(){
+    timer--;
+    if(timer<0){
+        timerReset();
+        nextQuestion();
+    }
+    if(timer<10){
+        document.getElementById('timer').innerText="00:0"+timer;
+    }else{
+        document.getElementById('timer').innerText="00:"+timer;
+    }
+    
+    
+}
+
+function timerReset(){
+    timer=30;
+}
+setInterval(() => {
+    countTimer();
+}, "1000");
 
 function getQuestions(){
     fetch("https://opentdb.com/api.php?amount=10&category=18&type=multiple")
@@ -36,6 +59,7 @@ function shofleAnswers(){
 }
 
 function firstQuestion(){
+    timerReset();
     document.getElementById('questionNumber').innerText="Questions 1/10";
     answerList=data['results'][0]['incorrect_answers'];
     answerList.push(data['results'][0]['correct_answer']);
@@ -65,8 +89,8 @@ function nextQuestion(){
         document.getElementById('nextButton').style="display:none";
         document.getElementById('result').style="display:block";
         document.getElementById('form').style="margin-top:100px";
+        document.getElementById('timer').style="display:none"
         calFinalScore();
-
         //console.log(correctAnswersList);
         //console.log(selectedAnswerList);
     }else{
