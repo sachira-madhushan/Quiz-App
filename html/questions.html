@@ -16,7 +16,9 @@
                 <h4 id="username">Name</h4>
             </div>
         </div>
-        <h2 id="timer">00:30</h2>
+        <div>
+            <h2 id="timer">00:30</h2>
+        </div>
         <div class="middle">
             <p id="questionNumber">Questions 0/10</p>
             <div class="questionform" id="form">
@@ -45,10 +47,15 @@
                 <div id="result">
                     <h1>Your Score</h1>
                     <h2 id="score">5/10</h2>
-                    <button class="next">Replay</button>
+                    <button class="next" onclick="replay()">Replay</button>
                 </div>
             </div>
+            
             <button class="next" onclick="nextQuestion()" id="nextButton">Next</button>
+            <div id="correctanswers">
+                <h1>Correct Answers</h1>
+                
+            </div>
         </div>
     </div>
 </body>
