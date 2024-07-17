@@ -21,24 +21,30 @@
             <div class="questionform" id="form">
                 <div class="formcontent" id="formcontent">
                     <p id="question">Question</p>
-                <div class="answerlist">
-                    <div class="answer" onclick="answer1()" id="answer1div">
-                        <input type="radio" name="answer1" id="answer1radio">
-                        <label id="answer1" onclick="answer1()">Answer 01</label>
-                    </div>
-                    <div class="answer" onclick="answer2()" id="answer2div">
-                        <input type="radio" name="answer1" id="answer2radio">
-                        <label id="answer2" onclick="answer2()">Answer 02</label>
-                    </div>
-                    <div class="answer" onclick="answer3()" id="answer3div">
-                        <input type="radio" name="answer1" id="answer3radio">
-                        <label id="answer3" onclick="answer3()">Answer 03</label>
-                    </div>
-                    <div class="answer" onclick="answer4()" id="answer4div">
-                        <input type="radio" name="answer1" id="answer4radio">
-                        <label id="answer4" onclick="answer4()">Answer 04</label>
+                    <div class="answerlist">
+                        <div class="answer" onclick="answer1()" id="answer1div">
+                            <input type="radio" name="answer1" id="answer1radio">
+                            <label id="answer1" onclick="answer1()">Answer 01</label>
+                        </div>
+                        <div class="answer" onclick="answer2()" id="answer2div">
+                            <input type="radio" name="answer1" id="answer2radio">
+                            <label id="answer2" onclick="answer2()">Answer 02</label>
+                        </div>
+                        <div class="answer" onclick="answer3()" id="answer3div">
+                            <input type="radio" name="answer1" id="answer3radio">
+                            <label id="answer3" onclick="answer3()">Answer 03</label>
+                        </div>
+                        <div class="answer" onclick="answer4()" id="answer4div">
+                            <input type="radio" name="answer1" id="answer4radio">
+                            <label id="answer4" onclick="answer4()">Answer 04</label>
+                        </div>
                     </div>
                 </div>
+
+                <div id="result">
+                    <h1>Your Score</h1>
+                    <h2 id="score">5/10</h2>
+                    <button class="next">Replay</button>
                 </div>
             </div>
             <button class="next" onclick="nextQuestion()" id="nextButton">Next</button>

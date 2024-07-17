@@ -47,6 +47,15 @@ function firstQuestion(){
     document.getElementById('answer4').innerText=answerList[3];
 }
 
+function calFinalScore(){
+    var score=0;
+    for(var i=0;i<10;i++){
+        if(selectedAnswerList[i]===correctAnswersList[i]){
+            score++;
+        }
+    }
+    document.getElementById('score').innerText=score+"/10";
+}
 function nextQuestion(){
     selectedAnswerList.push(selectedAnswer);
     qIndex++;
@@ -54,10 +63,14 @@ function nextQuestion(){
         document.getElementById('formcontent').style="display:none";
         document.getElementById('questionNumber').style="display:none";
         document.getElementById('nextButton').style="display:none";
+        document.getElementById('result').style="display:block";
         document.getElementById('form').style="margin-top:100px";
-        console.log(correctAnswersList);
-        console.log(selectedAnswerList);
+        calFinalScore();
+
+        //console.log(correctAnswersList);
+        //console.log(selectedAnswerList);
     }else{
+        unselectAllAnswers();
         document.getElementById('questionNumber').innerText="Questions "+(qIndex+1)+"/10";
         answerList=data['results'][qIndex]['incorrect_answers'];
         answerList.push(data['results'][qIndex]['correct_answer']);
@@ -68,7 +81,6 @@ function nextQuestion(){
         document.getElementById('answer3').innerText=answerList[2];
         document.getElementById('answer4').innerText=answerList[3];
     }
-    
     
 }
 
@@ -123,6 +135,16 @@ function selectAnswer(){
     }
 }
 
+function unselectAllAnswers(){
+    document.getElementById('answer1div').classList.remove('selectedAnswer');
+    document.getElementById('answer2div').classList.remove('selectedAnswer');
+    document.getElementById('answer3div').classList.remove('selectedAnswer');
+    document.getElementById('answer4div').classList.remove('selectedAnswer');
+    document.getElementById('answer1radio').checked=false;
+    document.getElementById('answer2radio').checked=false;
+    document.getElementById('answer3radio').checked=false;
+    document.getElementById('answer4radio').checked=false;
+}
 function unselectAnswer(){
     if(selectedAnswer!==oldSelectedAnswer){
         switch(oldSelectedAnswer){

@@ -100,3 +100,19 @@
 #answer1,#answer2,#answer3,#answer4{
     cursor: pointer;
 }
+
+#result{
+    text-align: center;
+    display: none;
+}
+#result h1{
+    font-family: sans-serif;
+    padding-top:100px;
+    font-size:50px;
+}
+
+#result h2{
+    font-family: sans-serif;
+    padding-top:20px;
+    font-size:30px;
+}
