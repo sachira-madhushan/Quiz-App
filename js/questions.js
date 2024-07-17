@@ -4,7 +4,7 @@ var answerList=[];
 var tempList=[];
 var correctAnswersList=[];
 var selectedAnswerList=[];
-var selectedAnswer;
+var selectedAnswer=5;
 var oldSelectedAnswer;
 var correctAnswer=3;
 
@@ -13,15 +13,12 @@ function getQuestions(){
     .then(response => response.json())
     .then((value)=>{
         data=value;
-        console.log(data['results']);
         firstQuestion();
-
     }
     ).catch((e)=>console.log(e));
 }
 function shofleAnswers(){
     tempList= answerList.slice();
-    console.log(tempList);
     correctAnswer =Math.floor(Math.random() * 4);
     for(var i=0;i<4;i++){
         if(i===correctAnswer){
@@ -35,15 +32,14 @@ function shofleAnswers(){
             
         }
     }
-    console.log("Suffled");
+    correctAnswersList.push(correctAnswer);
 }
+
 function firstQuestion(){
-    
     document.getElementById('questionNumber').innerText="Questions 1/10";
     answerList=data['results'][0]['incorrect_answers'];
     answerList.push(data['results'][0]['correct_answer']);
     shofleAnswers();
-    console.log(answerList);
     document.getElementById('question').innerText=(qIndex+1)+"."+data['results'][0]['question'];
     document.getElementById('answer1').innerText=answerList[0];
     document.getElementById('answer2').innerText=answerList[1];
@@ -52,16 +48,28 @@ function firstQuestion(){
 }
 
 function nextQuestion(){
+    selectedAnswerList.push(selectedAnswer);
     qIndex++;
-    document.getElementById('questionNumber').innerText="Questions "+(qIndex+1)+"/10";
-    answerList=data['results'][qIndex]['incorrect_answers'];
-    answerList.push(data['results'][qIndex]['correct_answer']);
-    shofleAnswers();
-    document.getElementById('question').innerText=(qIndex+1)+"."+data['results'][qIndex]['question'];
-    document.getElementById('answer1').innerText=answerList[0];
-    document.getElementById('answer2').innerText=answerList[1];
-    document.getElementById('answer3').innerText=answerList[2];
-    document.getElementById('answer4').innerText=answerList[3];
+    if(qIndex===10){
+        document.getElementById('formcontent').style="display:none";
+        document.getElementById('questionNumber').style="display:none";
+        document.getElementById('nextButton').style="display:none";
+        document.getElementById('form').style="margin-top:100px";
+        console.log(correctAnswersList);
+        console.log(selectedAnswerList);
+    }else{
+        document.getElementById('questionNumber').innerText="Questions "+(qIndex+1)+"/10";
+        answerList=data['results'][qIndex]['incorrect_answers'];
+        answerList.push(data['results'][qIndex]['correct_answer']);
+        shofleAnswers();
+        document.getElementById('question').innerText=(qIndex+1)+"."+data['results'][qIndex]['question'];
+        document.getElementById('answer1').innerText=answerList[0];
+        document.getElementById('answer2').innerText=answerList[1];
+        document.getElementById('answer3').innerText=answerList[2];
+        document.getElementById('answer4').innerText=answerList[3];
+    }
+    
+    
 }
 
 function setName(){
@@ -94,6 +102,7 @@ function answer4(){
 }
 
 function selectAnswer(){
+    selectedAnswerList.push(selectedAnswer);
     switch(selectedAnswer){
         case 0:
             document.getElementById('answer1div').classList.add('selectedAnswer');

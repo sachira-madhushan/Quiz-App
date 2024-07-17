@@ -18,8 +18,9 @@
         </div>
         <div class="middle">
             <p id="questionNumber">Questions 0/10</p>
-            <div class="questionform">
-                <p id="question">Question</p>
+            <div class="questionform" id="form">
+                <div class="formcontent" id="formcontent">
+                    <p id="question">Question</p>
                 <div class="answerlist">
                     <div class="answer" onclick="answer1()" id="answer1div">
                         <input type="radio" name="answer1" id="answer1radio">
@@ -38,8 +39,9 @@
                         <label id="answer4" onclick="answer4()">Answer 04</label>
                     </div>
                 </div>
+                </div>
             </div>
-            <button class="next" onclick="nextQuestion()">Next</button>
+            <button class="next" onclick="nextQuestion()" id="nextButton">Next</button>
         </div>
     </div>
 </body>
