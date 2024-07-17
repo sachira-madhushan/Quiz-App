@@ -1,10 +1,10 @@
-let data;
-function getQuestions(){
-    fetch("https://opentdb.com/api.php?amount=10&category=18&type=multiple")
-    .then(response => response.json())
-    .then((value)=>{
-        data=value;
-        console.log(data['results']);
+function setName(){
+    var name=document.getElementById('name').value;
+    if(name==""){
+        document.getElementById('error').style="display:"
+    }else{
+        document.cookie="username="+name;
+        //console.log(document.cookie.split('=')[1]);
+        window.location.href = window.location.href+"/html/questions.html";
     }
-    ).catch((e)=>console.log(e));
 }

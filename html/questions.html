@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/questions.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="top">
+            <div class="left">
+                <img src="../src/FAQ.png" alt="">
+            </div>
+            <div class="right">
+                <h4 id="username">Name</h4>
+            </div>
+        </div>
+        <div class="middle">
+            <p id="questionNumber">Questions 0/10</p>
+            <div class="questionform">
+                <p id="question">Question</p>
+                <div class="answerlist">
+                    <div class="answer" onclick="answer1()" id="answer1div">
+                        <input type="radio" name="answer1" id="answer1radio">
+                        <label id="answer1" onclick="answer1()">Answer 01</label>
+                    </div>
+                    <div class="answer" onclick="answer2()" id="answer2div">
+                        <input type="radio" name="answer1" id="answer2radio">
+                        <label id="answer2" onclick="answer2()">Answer 02</label>
+                    </div>
+                    <div class="answer" onclick="answer3()" id="answer3div">
+                        <input type="radio" name="answer1" id="answer3radio">
+                        <label id="answer3" onclick="answer3()">Answer 03</label>
+                    </div>
+                    <div class="answer" onclick="answer4()" id="answer4div">
+                        <input type="radio" name="answer1" id="answer4radio">
+                        <label id="answer4" onclick="answer4()">Answer 04</label>
+                    </div>
+                </div>
+            </div>
+            <button class="next" onclick="nextQuestion()">Next</button>
+        </div>
+    </div>
+</body>
+<script src="../js/questions.js"></script>
+</html>

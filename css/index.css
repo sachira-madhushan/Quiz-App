@@ -7,7 +7,8 @@
     position: relative;
     background-image: url("./../src/background.png");
     background-repeat: no-repeat;
-    background-size:contain;
+    background-size:cover;
+    height:100vh;
     background-position: center;
 }
 .top{
@@ -56,7 +57,7 @@
     font-weight: bolder;
     padding-bottom:20px;
 }
-form{
+.form{
     text-align: center;
 }
 
@@ -83,10 +84,21 @@ footer{
     height:50px;
     background-color: rgba(94, 181, 98, 1);
     position: relative;
-    bottom: -25px;
+    bottom:-30px;
 }
 footer p{
     text-align: center;
     padding-top:15px;
     color: white;
+}
+.form p{
+    color: rgba(112, 29, 29, 0.888);
+    background-color: rgba(220, 113, 113, 0.649);
+    padding:5px 0px;
+    margin:5px 200px;
+    border-radius: 5px;
+    display:none;
+}
+#question{
+    margin:10px;
 }
