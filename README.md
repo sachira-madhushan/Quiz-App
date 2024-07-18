@@ -1,7 +1,7 @@
 # Quiz-App
 Quiz application - HTML CSS Javascript
 
-Click to play: 
+Click to play: https://sachira-madhushan.github.io/Quiz-App/
 
 
 <h1>Screenshots</h1>
