@@ -166,21 +166,21 @@
         clear: both;
     }
     .next{
-        width: 95%;
-        padding:5px 30px;
+        width: 100%;
+        padding:5px 0px;
         margin-top:20px;
         background-color: rgba(94, 181, 98, 1);
         border: none;
         border-radius:5px;
         color: white;
         cursor: pointer;
-
+        align-self: flex-start;
     }
     .top{
-        /* height:8vh; */
+        height:8vh;
         width:100%;
         background-color: rgba(94, 181, 98, 1);
-        
+        display:flex;
     }
     .top img{
         clear: both;
@@ -196,7 +196,7 @@
     }
     .right h4{
         margin: 40px;
-        padding:10px 50px;
+        padding:10px 0px;
         border:1px solid white;
         color: white;
         background: transparent;

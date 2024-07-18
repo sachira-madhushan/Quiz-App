@@ -121,9 +121,10 @@ footer p{
 
     }
     .top{
-        /* height:8vh; */
+        height:8vh;
         width:100%;
         background-color: rgba(94, 181, 98, 1);
+        display:flex;
         
     }
     .top img{
@@ -131,7 +132,7 @@ footer p{
     }
     .top .left{
         clear: both;
-        width:80%;
+        width:50%;
     }
     .top .right{
         width:80%;
@@ -139,11 +140,27 @@ footer p{
         clear: both;
     }
     .right h4{
-        margin: 40px;
-        padding:10px 50px;
+        margin:0px;
+        padding:10px 0px;
         border:1px solid white;
         color: white;
         background: transparent;
         cursor: pointer;
+    }
+    input{
+        text-align: center;
+        /* padding:5px 50px; */
+        width:50%;
+        margin:10px;
+        border: none;
+        border-radius:5px;
+    }
+    .form p{
+        color: rgba(112, 29, 29, 0.888);
+        background-color: rgba(220, 113, 113, 0.649);
+        padding:5px 0px;
+        margin:5px 5px;
+        border-radius: 5px;
+        display:none;
     }
 }
