@@ -177,7 +177,6 @@
         align-self: flex-start;
     }
     .top{
-        height:8vh;
         width:100%;
         background-color: rgba(94, 181, 98, 1);
         display:flex;
