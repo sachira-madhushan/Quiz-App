@@ -2,13 +2,18 @@ var data;
 var qIndex=0;
 var answerList=[];
 var tempList=[];
+//Correct answer list
 var correctAnswersList=[];
+//User selected answer list
 var selectedAnswerList=[];
+
 var selectedAnswer=5;
 var oldSelectedAnswer;
 var correctAnswer=3;
 var timer=30;
 
+
+//Timer
 function countTimer(){
     timer--;
     if(timer<0){
@@ -20,17 +25,20 @@ function countTimer(){
     }else{
         document.getElementById('timer').innerText="00:"+timer;
     }
-    
-    
 }
 
+//Reset timer
 function timerReset(){
     timer=30;
 }
+
+//Run timer function every 1 sec
 setInterval(() => {
     countTimer();
 }, "1000");
 
+
+//Get questions from API
 function getQuestions(){
     fetch("https://opentdb.com/api.php?amount=10&category=18&type=multiple")
     .then(response => response.json())
@@ -41,6 +49,8 @@ function getQuestions(){
     }
     ).catch((e)=>console.log(e));
 }
+
+//Shuffle answers
 function shofleAnswers(){
     tempList= answerList.slice();
     correctAnswer =Math.floor(Math.random() * 4);
@@ -59,6 +69,8 @@ function shofleAnswers(){
     correctAnswersList.push(correctAnswer);
 }
 
+
+//Load first question
 function firstQuestion(){
     timerReset();
     document.getElementById('questionNumber').innerText="Questions 1/10";
@@ -72,6 +84,7 @@ function firstQuestion(){
     document.getElementById('answer4').innerHTML=answerList[3];
 }
 
+//Calculate final score
 function calFinalScore(){
     var score=0;
     for(var i=0;i<10;i++){
@@ -81,9 +94,13 @@ function calFinalScore(){
     }
     document.getElementById('score').innerText=score+"/10";
 }
+
+//Load next question
 function nextQuestion(){
     selectedAnswerList.push(selectedAnswer);
     qIndex++;
+
+    //Show result
     if(qIndex===10){
         document.getElementById('formcontent').style="display:none";
         document.getElementById('questionNumber').style="display:none";
@@ -110,10 +127,12 @@ function nextQuestion(){
     
 }
 
+//Show user name from cookie
 function setName(){
     document.getElementById('username').innerText="Hello "+document.cookie.split('=')[1]+"!";
 }
 
+//Answer selection
 function answer1(){
     oldSelectedAnswer=selectedAnswer;
     selectedAnswer=0;
@@ -138,7 +157,9 @@ function answer4(){
     selectAnswer();
     unselectAnswer();
 }
+//Answer selection end
 
+//Select answer
 function selectAnswer(){
     selectedAnswerList.push(selectedAnswer);
     switch(selectedAnswer){
@@ -161,6 +182,7 @@ function selectAnswer(){
     }
 }
 
+//Unselect all answers
 function unselectAllAnswers(){
     document.getElementById('answer1div').classList.remove('selectedAnswer');
     document.getElementById('answer2div').classList.remove('selectedAnswer');
@@ -171,6 +193,8 @@ function unselectAllAnswers(){
     document.getElementById('answer3radio').checked=false;
     document.getElementById('answer4radio').checked=false;
 }
+
+//Unselect old selected answer when user click new answer
 function unselectAnswer(){
     if(selectedAnswer!==oldSelectedAnswer){
         switch(oldSelectedAnswer){
@@ -190,6 +214,8 @@ function unselectAnswer(){
     }
     
 }
+
+//Map question with correct answer
 function mapCorrectAnswers(){
     var resultWindow=document.getElementById('correctanswers');
     for(var i=0;i<10;i++){
@@ -207,8 +233,12 @@ function mapCorrectAnswers(){
         resultWindow.appendChild(a);
     }
 }
+
+//Replay button
 function replay(){
     window.location.href = window.location.href.replace("/html/questions.html","");
 }
+
+//Call those functions when questions.html page loads
 getQuestions();
 setName();
