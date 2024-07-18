@@ -199,7 +199,7 @@ function mapCorrectAnswers(){
         q.classList.add('questions');
         a.classList.add('correctanswer');
         qnumber.classList.add('qnumber');
-        q.innerHTML=data['results'][i]['question'];
+        q.innerHTML=(i+1)+"."+data['results'][i]['question'];
         a.innerHTML=data['results'][i]['correct_answer'];
 
         resultWindow.appendChild(qnumber);

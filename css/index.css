@@ -38,10 +38,9 @@
 
 .body{
     width:35%;
-    margin:150px auto;
+    margin:60px auto;
     background-color:rgba(94, 181, 98, 0.401);
-    height:50%;
-
+    /* height:50%; */
 }
 .image{
     display: flex;
@@ -101,4 +100,50 @@ footer p{
 }
 #question{
     margin:10px;
+}
+
+@media only screen and (max-width: 425px){
+	.body{
+        width:90%;
+        margin:60px auto;
+        background-color:rgba(94, 181, 98, 0.401);
+        /* height:50%; */
+    }
+    .next{
+        width: 95%;
+        padding:5px 30px;
+        margin-top:20px;
+        background-color: rgba(94, 181, 98, 1);
+        border: none;
+        border-radius:5px;
+        color: white;
+        cursor: pointer;
+
+    }
+    .top{
+        /* height:8vh; */
+        width:100%;
+        background-color: rgba(94, 181, 98, 1);
+        
+    }
+    .top img{
+        clear: both;
+    }
+    .top .left{
+        clear: both;
+        width:80%;
+    }
+    .top .right{
+        width:80%;
+        text-align: center;
+        clear: both;
+    }
+    .right h4{
+        margin: 40px;
+        padding:10px 50px;
+        border:1px solid white;
+        color: white;
+        background: transparent;
+        cursor: pointer;
+    }
 }
